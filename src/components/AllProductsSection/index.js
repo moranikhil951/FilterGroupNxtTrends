@@ -75,7 +75,7 @@ const ratingsList = [
 class AllProductsSection extends Component {
   state = {
     productsList: [],
-    isLoading: false,
+
     activeOptionId: sortbyOptions[0].optionId,
     categoryOptionId: '',
     ratingOptionId: '',
@@ -88,9 +88,7 @@ class AllProductsSection extends Component {
   }
 
   getProducts = async () => {
-    this.setState({
-      isLoading: true,
-    })
+    this.setState({settingStatus: statusMode.inProgressLoader})
     const jwtToken = Cookies.get('jwt_token')
 
     // TODO: Update the code to get products with filters applied
@@ -121,7 +119,7 @@ class AllProductsSection extends Component {
       }))
       this.setState({
         productsList: updatedData,
-        isLoading: false,
+
         settingStatus: statusMode.successProducts,
       })
     } else {
@@ -202,8 +200,8 @@ class AllProductsSection extends Component {
   // TODO: Add failure view
 
   renderFailureView = () => (
-    <div>
-      <div>
+    <div className="no-products-container">
+      <div className="products-list">
         <img
           src="https://assets.ccbp.in/frontend/react-js/nxt-trendz/nxt-trendz-products-error-view.png"
           alt="products failure"
@@ -235,7 +233,7 @@ class AllProductsSection extends Component {
   }
 
   render() {
-    const {isLoading, categoryOptionId, ratingOptionId, searchText} = this.state
+    const {categoryOptionId, ratingOptionId, searchText} = this.state
 
     return (
       <div className="all-products-section">
@@ -253,7 +251,7 @@ class AllProductsSection extends Component {
           enterSearch={this.enterSearch}
         />
 
-        {isLoading ? this.renderLoader() : this.statusViewingMode()}
+        {this.statusViewingMode()}
       </div>
     )
   }
