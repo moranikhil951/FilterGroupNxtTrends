@@ -1,0 +1,73 @@
+.filters-group-container {
+  margin-top: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .filters-group-container {
+    width: 30%;
+    max-width: 350px;
+    margin-top: 48px;
+    flex-shrink: 0;
+  }
+}
+
+/* Write your CSS here */
+
+.unOrderedList-category {
+  padding-left: 0px;
+  list-style-type: none;
+}
+
+.unorderedList-rating {
+  padding-left: 0px;
+  list-style-type: none;
+}
+.rating-image {
+  height: 20px;
+  margin-right: 10px;
+}
+
+.rating-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.rating-styling-button {
+  color: #0967d2;
+}
+.up-para {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.category-styling-button {
+  color: #0967d2;
+  cursor: pointer;
+}
+
+.category-button {
+  cursor: pointer;
+}
+
+.button-clear {
+  background-color: #0967d2;
+  color: white;
+  border: 0;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.search-con {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 55%;
+  border: 2px black solid;
+}
+
+.searchInput {
+  border: 0;
+  outline: none;
+  width: 80%;
+}
